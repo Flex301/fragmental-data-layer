@@ -14,13 +14,14 @@ class Activity implements ApiRangeInterface {
   }
 
   /** 
-   * NOTE: This is just simulation of the api behavior
+   * NOTE: This is just imitation of the api behavior 
    */
   public function getRecordsByRange(\DateTime $startDate, \DateTime $endDate) : array {
 
     $startTime = $startDate->getTimestamp();
     $endTime = $endDate->getTimestamp();
 
+    // Just imitation: It throws DataLimitException when more than 10 days requested
     $dataLimitPeriod = 86400 * 10;
 
     if ($endTime - $startTime > $dataLimitPeriod) {
